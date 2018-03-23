@@ -8,9 +8,9 @@ import yy.hao.com.testphonemvp.base.IBaseView;
  */
 
 public interface IPhoneActivity<T> extends IBaseView {
-    void getPhoneNumber();
 
 
+    void setText(String aaa);
 
     void getData(T mData);
 

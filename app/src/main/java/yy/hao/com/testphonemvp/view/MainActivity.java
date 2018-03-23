@@ -3,11 +3,14 @@ package yy.hao.com.testphonemvp.view;
 import android.content.Intent;
 import android.widget.Button;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.OnClick;
 import yy.hao.com.testphonemvp.R;
 import yy.hao.com.testphonemvp.base.BaseActivity;
 import yy.hao.com.testphonemvp.iview.IMainAcitvity;
+import yy.hao.com.testphonemvp.m.Student;
 import yy.hao.com.testphonemvp.present.MainActivityPresent;
 
 public class MainActivity extends BaseActivity<MainActivityPresent>implements IMainAcitvity {
@@ -15,10 +18,13 @@ public class MainActivity extends BaseActivity<MainActivityPresent>implements IM
     @BindView(R.id.btn_jump)
     Button btnJump;
 
+    @Inject
+    Student student;
+
 
     @Override
     protected void inject() {
-        mApiCompent.inject(this);
+       mApiCompent.inject(this);
     }
 
     @Override

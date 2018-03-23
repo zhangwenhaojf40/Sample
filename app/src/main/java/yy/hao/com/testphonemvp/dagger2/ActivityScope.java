@@ -1,5 +1,6 @@
 package yy.hao.com.testphonemvp.dagger2;
 
+import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 
 import javax.inject.Scope;
@@ -14,3 +15,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface ActivityScope {
 }
+
+

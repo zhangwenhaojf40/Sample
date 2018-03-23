@@ -6,14 +6,12 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import yy.hao.com.testphonemvp.app.MyApp;
-import yy.hao.com.testphonemvp.m.Student;
 
 /**
  * Created by Administrator
  * on 2018/3/20 0020.
  */
-@Module
+@Module(includes = ClientModule.class)
 public class AppModule {
     Application application;
     public AppModule(Application application) {

@@ -1,10 +1,8 @@
 package yy.hao.com.testphonemvp.view;
 
 import android.text.TextUtils;
-import android.view.TextureView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -27,10 +25,12 @@ public class PhoneActivity extends BaseActivity<PhoneActivityPresent> implements
     @BindView(R.id.btn_query)
     Button btnQuery;
     private String mPhoneNumber;
+    public String  aaa="33333";
 
     @Override
     protected void inject() {
-        mApiCompent.inject(this);
+     mApiCompent.inject(this);
+
     }
 
     @Override
@@ -57,18 +57,22 @@ public class PhoneActivity extends BaseActivity<PhoneActivityPresent> implements
 
     @OnClick(R.id.btn_query)
     public void onViewClicked() {
+        mPhoneNumber = etPhone.getText().toString().trim();
         if (TextUtils.isEmpty(mPhoneNumber)) {
             ToastUtils.showToast("不能为空");
             return;
         }
+        mPresent.build()
+                .setPhoneNumber(mPhoneNumber);
         mPresent.onCreate();
     }
 
-    @Override
-    public void getPhoneNumber() {
-        mPhoneNumber = etPhone.getText().toString().trim();
-    }
 
+
+    @Override
+    public void setText(String aaa) {
+        btnQuery.setText(aaa);
+    }
 
 
     @Override

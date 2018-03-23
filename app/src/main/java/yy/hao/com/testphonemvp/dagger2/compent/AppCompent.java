@@ -1,4 +1,5 @@
-package yy.hao.com.testphonemvp.dagger2;
+package yy.hao.com.testphonemvp.dagger2.compent;
+
 
 import android.app.Application;
 
@@ -8,6 +9,7 @@ import dagger.Component;
 import yy.hao.com.testphonemvp.app.MyApp;
 import yy.hao.com.testphonemvp.dagger2.module.AppModule;
 import yy.hao.com.testphonemvp.m.Student;
+import yy.hao.com.testphonemvp.net.ApiService;
 
 /**
  * Created by Administrator
@@ -19,5 +21,5 @@ public interface AppCompent {
 
     Application myApplication();
 
-
+    ApiService apiService();
 }

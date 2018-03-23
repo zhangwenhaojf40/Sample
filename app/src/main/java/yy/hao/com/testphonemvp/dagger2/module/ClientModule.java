@@ -1,23 +1,26 @@
-package yy.hao.com.testphonemvp.net;
+package yy.hao.com.testphonemvp.dagger2.module;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
+import javax.inject.Singleton;
+
+import dagger.Module;
+import dagger.Provides;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import yy.hao.com.testphonemvp.m.LocationBean;
+import yy.hao.com.testphonemvp.net.ApiService;
+import yy.hao.com.testphonemvp.net.NetUtils;
 
 /**
  * Created by Administrator
- * on 2018/3/20 0020.
+ * on 2018/3/21 0021.
  */
+@Module
+public class ClientModule {
 
-public class NetManagerUtils{
-    public static  ApiService Net() {
+    @Provides
+    @Singleton
+    public ApiService provide() {
         OkHttpClient client = new OkHttpClient.Builder().build();
         Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
@@ -27,6 +30,5 @@ public class NetManagerUtils{
                 .build();
         ApiService apiService = retrofit.create(ApiService.class);
         return apiService;
-
     }
 }

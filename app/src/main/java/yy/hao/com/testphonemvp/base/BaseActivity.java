@@ -3,6 +3,8 @@ package yy.hao.com.testphonemvp.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import javax.inject.Inject;
 
@@ -25,7 +27,12 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        mApiCompent = DaggerApiCompent.builder().appCompent(ComponentHolder.getAppCompent()).apiModule(new ApiModule()).build();
+        mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
+                .appCompent(ComponentHolder.getAppCompent())
+
+                .build();
+//        mApiCompent=DaggerApiCompent.builder().appModule(new AppModule(MyApp.getApp())).apiModule(new ApiModule()).build();
+
         inject();
         attachView();
         super.onCreate(savedInstanceState);
@@ -36,6 +43,8 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
         initListenten();
         initData();
     }
+
+
 
     private void attachView() {
         if (mPresent != null) {
@@ -54,7 +63,21 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
         super.onDestroy();
         detachView();
     }
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // app icon in action bar clicked; goto parent activity.
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        return super.onMenuOpened(featureId, menu);
+    }
     protected abstract void inject();
 
     protected abstract void initData();

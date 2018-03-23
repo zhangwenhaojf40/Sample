@@ -2,11 +2,12 @@ package yy.hao.com.testphonemvp.app;
 
 import android.app.Application;
 
-import yy.hao.com.testphonemvp.dagger2.AppCompent;
 import yy.hao.com.testphonemvp.dagger2.ComponentHolder;
 
-import yy.hao.com.testphonemvp.dagger2.DaggerAppCompent;
+import yy.hao.com.testphonemvp.dagger2.compent.AppCompent;
+import yy.hao.com.testphonemvp.dagger2.compent.DaggerAppCompent;
 import yy.hao.com.testphonemvp.dagger2.module.AppModule;
+import yy.hao.com.testphonemvp.dagger2.module.ClientModule;
 
 /**
  * Created by Administrator
@@ -20,7 +21,11 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         instans = this;
-        AppCompent appCompent = DaggerAppCompent.builder().appModule(new AppModule(this)).build();
+
+        AppCompent appCompent = DaggerAppCompent.builder()
+
+                .clientModule(new ClientModule())
+                .appModule(new AppModule(this)).build();
         ComponentHolder.setAppCompent(appCompent);
     }
     public static Application getApp() {
