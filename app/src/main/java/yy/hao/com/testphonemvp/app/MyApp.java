@@ -2,6 +2,8 @@ package yy.hao.com.testphonemvp.app;
 
 import android.app.Application;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 import yy.hao.com.testphonemvp.dagger2.ComponentHolder;
 
 import yy.hao.com.testphonemvp.dagger2.compent.AppCompent;
@@ -21,7 +23,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         instans = this;
-
+        ARouter.init(this);
         AppCompent appCompent = DaggerAppCompent.builder()
 
                 .clientModule(new ClientModule())

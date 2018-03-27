@@ -9,6 +9,7 @@ import yy.hao.com.testphonemvp.dagger2.compent.AppCompent;
 import yy.hao.com.testphonemvp.dagger2.module.ApiModule;
 import yy.hao.com.testphonemvp.view.MainActivity;
 import yy.hao.com.testphonemvp.view.PhoneActivity;
+import yy.hao.com.testphonemvp.view.SplashActivity;
 
 /**
  * Created by Administrator
@@ -20,6 +21,7 @@ public interface ApiCompent {
 
     void inject(MainActivity activity);
     void inject(PhoneActivity activity);
+    void inject(SplashActivity activity);
 
 
 
