@@ -1,15 +1,16 @@
 package yy.hao.com.testphonemvp.view;
 
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.launcher.ARouter;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.BindViews;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yy.hao.com.testphonemvp.R;
 import yy.hao.com.testphonemvp.animation.BindValues;
@@ -17,19 +18,22 @@ import yy.hao.com.testphonemvp.base.BaseActivity;
 import yy.hao.com.testphonemvp.iview.IMainAcitvity;
 import yy.hao.com.testphonemvp.m.Student;
 import yy.hao.com.testphonemvp.present.MainActivityPresent;
+
 @Route(path = "/Activity/MainActivity")
-public class MainActivity extends BaseActivity<MainActivityPresent>implements IMainAcitvity {
+public class MainActivity extends BaseActivity<MainActivityPresent> implements IMainAcitvity {
 
     @BindView(R.id.btn_jump)
     Button btnJump;
 
     @Inject
     Student student;
+    @BindView(R.id.btn_new_list)
+    Button btnNewList;
 
 
     @Override
     protected void inject() {
-       mApiCompent.inject(this);
+        mApiCompent.inject(this);
     }
 
     @Override
@@ -46,7 +50,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent>implements IM
 
     @Override
     protected void initView() {
-        btnJump.setText(mPresent.toString());
+
     }
 
     @Override
@@ -54,15 +58,22 @@ public class MainActivity extends BaseActivity<MainActivityPresent>implements IM
         return R.layout.activity_main;
     }
 
-    @OnClick(R.id.btn_jump)
-    public void onViewClicked() {
-        jumpToPhoneActivity();
-
-    }
 
     @Override
     public void jumpToPhoneActivity() {
-        startActivity(new Intent(this,PhoneActivity.class));
+        startActivity(new Intent(this, PhoneActivity.class));
     }
 
+
+    @OnClick({R.id.btn_jump, R.id.btn_new_list})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_jump:
+                jumpActivity("/Activity/CoordinatorLayoutActivity");
+                break;
+            case R.id.btn_new_list:
+                jumpActivity("/Activity/NewsActivity");
+                break;
+        }
+    }
 }

@@ -6,5 +6,5 @@ package yy.hao.com.testphonemvp.http;
  */
 
 public class NetUrl {
-    public static final String BASEURL = "";
+    public static final String BASEURL = "http://www.wanandroid.com/";
 }

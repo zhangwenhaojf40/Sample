@@ -9,7 +9,7 @@ import yy.hao.com.testphonemvp.view.PhoneActivity;
  * Created by Administrator
  * on 2018/3/20 0020.
  */
-@Module
+@Module(includes = ActivityModule.class)
 public class ApiModule {
     @Provides
     Student provide() {

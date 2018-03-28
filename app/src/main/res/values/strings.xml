@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">TestPhoneMvp</string>
+    <string name="news_list">新闻列表</string>
+    <string name="design">特性</string>
+
+    <!--menu-->
+    <string name="news">新闻</string>
+    <string name="zhihu">知乎</string>
+    <string name="photo">图片</string>
+    <string name="video">视频</string>
+    <string name="tools">设置</string>
+    <string name="no_photo_mode">无图模式</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="about">关于</string>
 </resources>

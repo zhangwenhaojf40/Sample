@@ -1,5 +1,7 @@
 package yy.hao.com.testphonemvp.present;
 
+import com.trello.rxlifecycle2.android.ActivityEvent;
+
 import javax.inject.Inject;
 
 import yy.hao.com.testphonemvp.iview.ISplashActivity;
@@ -9,7 +11,7 @@ import yy.hao.com.testphonemvp.iview.ISplashActivity;
  * on 2018/3/27 0027.
  */
 
-public class SplashActivityPresent extends BasePresent<ISplashActivity> {
+public class SplashActivityPresent extends BasePresent<ISplashActivity,ActivityEvent> {
     @Inject
     public SplashActivityPresent() {
     }

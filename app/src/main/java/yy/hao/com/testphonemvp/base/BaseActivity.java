@@ -11,12 +11,17 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.trello.rxlifecycle2.components.RxActivity;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import yy.hao.com.testphonemvp.dagger2.ComponentHolder;
 import yy.hao.com.testphonemvp.dagger2.compent.ApiCompent;
 import yy.hao.com.testphonemvp.dagger2.compent.DaggerApiCompent;
+import yy.hao.com.testphonemvp.dagger2.module.ActivityModule;
 import yy.hao.com.testphonemvp.dagger2.module.ApiModule;
 import yy.hao.com.testphonemvp.present.IPresent;
 
@@ -25,7 +30,7 @@ import yy.hao.com.testphonemvp.present.IPresent;
  * on 2018/3/20 0020.
  */
 
-public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivity implements IBaseView {
+public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActivity implements IBaseView {
     @Inject
     public T mPresent;
     public  ApiCompent mApiCompent;
@@ -35,6 +40,7 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
         setTranslucentStatus();
         mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
                 .appCompent(ComponentHolder.getAppCompent())
+                .activityModule(new ActivityModule())
                 .build();
 
         inject();
@@ -52,7 +58,7 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
 
     private void attachView() {
         if (mPresent != null) {
-            mPresent.attachView(this);
+            mPresent.attachView(this,this);
         }
     }
     private void detachView() {
@@ -102,10 +108,14 @@ public abstract  class BaseActivity<T extends IPresent> extends AppCompatActivit
             window.setStatusBarColor(Color.TRANSPARENT);
             //如果是首页  则需要判断状态栏字体能否改变  如不能改变 半透明
 
-                window.setStatusBarColor(Color.TRANSPARENT);
+                window.setStatusBarColor(Color.parseColor("#55000000"));
 
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
+    }
+    public void jumpActivity(String url) {
+        ARouter.getInstance().build(url)
+                .navigation();
     }
 }

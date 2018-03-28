@@ -19,7 +19,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.PhoneActivity" />
-        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.MainActivity"
+            android:theme="@style/MainTheme"
+            />
+        <activity android:name=".view.design.CoordinatorLayoutActivity" />
+        <activity android:name=".view.design.CoordActivityOneActivity" />
+        <activity android:name=".view.design.CoordActivityThreeActivity" />
+        <activity android:name=".view.design.CoordActivityFourActivity" />
+        <activity android:name=".view.design.CoordActivityFiveActivity" />
+        <activity android:name=".view.design.TextInputActivity" />
+        <activity android:name=".view.NewsActivity" />
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package yy.hao.com.testphonemvp.present;
 
+import com.trello.rxlifecycle2.android.ActivityEvent;
+
 import javax.inject.Inject;
 
 import io.reactivex.Observable;
@@ -17,7 +19,7 @@ import yy.hao.com.testphonemvp.net.NetUtils;
  * on 2018/3/20 0020.
  */
 
-public class PhoneActivityPresent extends BasePresent<IPhoneActivity<Result>> {
+public class PhoneActivityPresent extends BasePresent<IPhoneActivity<Result>,ActivityEvent> {
 
     ApiService api;
 
