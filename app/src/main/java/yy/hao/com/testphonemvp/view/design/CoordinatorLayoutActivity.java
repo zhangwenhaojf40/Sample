@@ -14,7 +14,7 @@ import yy.hao.com.testphonemvp.base.BaseActivity;
  * Created by ZhangWenHao
  * on 2018/3/28 0028.
  */
-@Route(path="/Activity/CoordinatorLayoutActivity")
+
 public class CoordinatorLayoutActivity extends BaseActivity {
     @BindView(R.id.btn_float)
     Button btnFloat;
@@ -49,7 +49,10 @@ public class CoordinatorLayoutActivity extends BaseActivity {
         return R.layout.activity_coordinatorlayout;
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     @OnClick({R.id.btn_float, R.id.button3,R.id.button6, R.id.button4 ,R.id.button5})
     public void onViewClicked(View view) {

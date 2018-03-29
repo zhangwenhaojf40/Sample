@@ -1,9 +1,9 @@
 package yy.hao.com.testphonemvp.net;
 
+import java.net.UnknownHostException;
+
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import yy.hao.com.testphonemvp.m.LocationBean;
-import yy.hao.com.testphonemvp.m.Result;
 import yy.hao.com.testphonemvp.util.ToastUtils;
 
 /**
@@ -24,7 +24,8 @@ public   abstract class BaseObserver<T> implements Observer<T>{
 
     @Override
     public void onError(Throwable e) {
-
+        if(e instanceof  UnknownHostException)
+        ToastUtils.showToast("没有网络");
     }
 
     @Override

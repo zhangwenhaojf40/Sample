@@ -45,13 +45,16 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_page"
+
         android:layout_width="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_height="match_parent">
 
     </android.support.v4.view.ViewPager>
 </android.support.design.widget.CoordinatorLayout>
-
+    <!--
+    抽屉  配合 DrawerLayout 使用
+    -->
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -61,4 +64,5 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_news"
         app:menu="@menu/activity_main_drawer"/>
+
 </android.support.v4.widget.DrawerLayout>

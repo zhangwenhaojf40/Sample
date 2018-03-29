@@ -22,4 +22,9 @@
         <item name="android:layout_marginRight">4dp</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
+    <style name="Animal.Theme" parent="BaseTheme">
+        <item name="android:activityOpenEnterAnimation">@android:anim/fade_out</item>
+        <item name="android:activityCloseExitAnimation">@android:anim/fade_in</item>
+
+    </style>
 </resources>

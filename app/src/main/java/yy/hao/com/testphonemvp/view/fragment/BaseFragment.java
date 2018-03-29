@@ -34,6 +34,8 @@ public abstract  class BaseFragment<T extends BasePresent> extends RxFragment im
     public Context context;
     public ApiCompent mApiCompent;
     Unbinder unbinder;
+    private View view;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -42,7 +44,8 @@ public abstract  class BaseFragment<T extends BasePresent> extends RxFragment im
         if(this.context == null) {
             this.context = this.getActivity();
         }
-        View view = View.inflate(this.context, this.getLayoutResId(),  null);
+        if(view==null)
+        view = View.inflate(this.context, this.getLayoutResId(),  null);
         unbinder = ButterKnife.bind(this, view);
         initView(view);
 

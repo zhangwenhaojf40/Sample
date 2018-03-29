@@ -48,6 +48,7 @@ public class NewsActivity extends BaseActivity<NewsActivityPresent> implements I
 
     @Override
     protected void initData() {
+
         initFragments();
         setTabViewpage();
     }

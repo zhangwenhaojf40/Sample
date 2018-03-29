@@ -1,5 +1,6 @@
 package yy.hao.com.testphonemvp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.animation.Animation;
@@ -77,11 +78,13 @@ public class SplashActivity extends BaseActivity<SplashActivityPresent> implemen
     @Override
     public void jumpMainActivity() {
 
-        ARouter.getInstance().build("/Activity/MainActivity")
-                .withTransition(R.anim.out,R.anim.out)
+      /*  ARouter.getInstance().build("/Activity/MainActivity")
+                .withTransition(android.R.anim.fade_in,android.R.anim.fade_out)
                 .withString("aaa","bbb")
-                .navigation();
-        finish();
+                .navigation();*/
+        startActivity(new Intent(this,MainActivity.class));
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
 
     }
 

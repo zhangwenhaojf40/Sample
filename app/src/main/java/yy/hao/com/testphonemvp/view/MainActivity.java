@@ -1,16 +1,12 @@
 package yy.hao.com.testphonemvp.view;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
-import com.alibaba.android.arouter.facade.annotation.Route;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import yy.hao.com.testphonemvp.R;
 import yy.hao.com.testphonemvp.animation.BindValues;
@@ -18,8 +14,9 @@ import yy.hao.com.testphonemvp.base.BaseActivity;
 import yy.hao.com.testphonemvp.iview.IMainAcitvity;
 import yy.hao.com.testphonemvp.m.Student;
 import yy.hao.com.testphonemvp.present.MainActivityPresent;
+import yy.hao.com.testphonemvp.view.design.CoordinatorLayoutActivity;
 
-@Route(path = "/Activity/MainActivity")
+
 public class MainActivity extends BaseActivity<MainActivityPresent> implements IMainAcitvity {
 
     @BindView(R.id.btn_jump)
@@ -69,7 +66,9 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_jump:
-                jumpActivity("/Activity/CoordinatorLayoutActivity");
+//                jumpActivity("/Activity/CoordinatorLayoutActivity");
+                startActivity(new Intent(this,CoordinatorLayoutActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 break;
             case R.id.btn_new_list:
                 jumpActivity("/Activity/NewsActivity");
