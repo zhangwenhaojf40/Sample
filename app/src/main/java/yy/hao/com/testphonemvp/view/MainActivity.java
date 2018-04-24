@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
+import com.bao.tao.photo.ImageActivity;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -26,6 +28,8 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
     Student student;
     @BindView(R.id.btn_new_list)
     Button btnNewList;
+    @BindView(R.id.btn_image)
+    Button btnImage;
 
 
     @Override
@@ -62,7 +66,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
     }
 
 
-    @OnClick({R.id.btn_jump, R.id.btn_new_list})
+    @OnClick({R.id.btn_jump, R.id.btn_new_list,R.id.btn_image})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_jump:
@@ -72,6 +76,9 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
                 break;
             case R.id.btn_new_list:
                 jumpActivity("/Activity/NewsActivity");
+                break;
+                case R.id.btn_image:
+                startActivity(new Intent(this,ImageActivity.class));
                 break;
         }
     }

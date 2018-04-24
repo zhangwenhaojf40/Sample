@@ -4,50 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="yy.hao.com.testphonemvp.view.MainActivity">
+    tools:context="com.bao.tao.photo.ImageActivity">
+
 
     <Button
-        android:id="@+id/btn_jump"
+        android:id="@+id/btn_carm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/design"
-        android:textAllCaps="false"
+        android:text="打开相机"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.232" />
 
     <Button
-        android:id="@+id/btn_new_list"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_photo"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="212dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/news_list"
+        android:layout_marginTop="8dp"
+        android:text="打开相册"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_jump" />
+         />
 
     <Button
-        android:id="@+id/btn_image"
+        android:id="@+id/btn_other"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="图库"
+        android:text="第三方图库"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_new_list"
-        app:layout_constraintVertical_bias="0.163" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_photo" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/iv"
+        android:layout_height="match_parent" />
 </android.support.constraint.ConstraintLayout>
