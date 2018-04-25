@@ -4,15 +4,22 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.IOException;
 
 import me.iwf.photopicker.PhotoPicker;
 
@@ -23,15 +30,24 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
     //请求码
     public static final int CARMREQUEST = 1000;
     public static final int IMAGEREQUEST = 2000;
+
+    private  File path;//图片保存目录
+    private String picFileName = "one.jpg";//营业执照
     //是否需要动态申请权限
     boolean M;
+    private File file1;
     private ImageView mImageView;
     private ImgUtil imgUtils;
-
+    private String TAG="aaa";
+    private Uri imageUri;//图片路径Uri
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image);
+        /*
+        *
+        * 此处待优化*/
+        BitmapUtils.init(this);
         //相机
         findViewById(R.id.btn_carm).setOnClickListener(this);
         //相册
@@ -124,8 +140,24 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
     * 调用相机
     * */
     public void openCarm() {
+        /*
+        * 这种方式也可以   onActivityResult中
+        *
+        *
+        *  Bundle bundle = data.getExtras();
+                Bitmap bitmap1 = (Bitmap) bundle.get("data");
+                Log.e(TAG, "onActivityResult: "+bitmap1.getByteCount() );
+                mImageView.setImageBitmap(bitmap1);
+                直接获取即可    但是是经过系统压缩的  不清楚
+
+        * */
+      /*  Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        startActivityForResult(intent, CARMREQUEST);*/
+
+        initFile();//定义用户存储拍摄图片的文件
         Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        startActivityForResult(intent, CARMREQUEST);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        startActivityForResult(intent, CARMREQUEST);//拍摄成功后将跳转至onActivityResult
     }
     /*
       * 结果回调
@@ -135,26 +167,67 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case CARMREQUEST:
+
+
+                    Bitmap bitmap = BitmapUtils.setPic(mImageView, imageUri);
+                    Log.e(TAG, "onActivityResult: "+ bitmap.getByteCount()+"================");
+                    if (bitmap != null) {
+                        //上次服务器的文件
+                        file1 = BitmapUtils.compressImage(bitmap);
+                    }
+                    setClearBitmp(bitmap);
+
+
+
                 break;
             case IMAGEREQUEST:
-                Bitmap bitmap = null;
+                Bitmap bitmap1 = null;
                 //判断手机系统版本号
                 if (Build.VERSION.SDK_INT >= 19) {
                     //4.4及以上系统使用这个方法处理图片
-                    bitmap =imgUtils .handleImageOnKitKat(this, data,mImageView);    //ImgUtil是自己实现的一个工具类
+                    bitmap1 =imgUtils .handleImageOnKitKat(this, data,mImageView);    //ImgUtil是自己实现的一个工具类
 
                 } else {
                     //4.4以下系统使用这个方法处理图片
-                    bitmap = imgUtils.handleImageBeforeKitKat(this, data);
+                    bitmap1 = imgUtils.handleImageBeforeKitKat(this, data);
                 }
 
-                mImageView.setImageBitmap(bitmap);
+                mImageView.setImageBitmap(bitmap1);
 
                 break;
         }
 
 
 
+    }
+    /*
+    * bitmap  制空
+    * */
+    private void setClearBitmp(Bitmap bitmap) {
+        if (bitmap != null && bitmap.isRecycled()) {
+            bitmap.recycle();
+        }
+    }
+    //创建文件并获取其路径的Uri
+    private void initFile() {
+        // 创建File对象，用于存储拍照后生成的图片
+        path = getExternalCacheDir();
+        File outputImage = new File(path + picFileName);//使用应用关联缓存目录存放图片
+        try {
+            if (outputImage.exists()) {
+                outputImage.delete();
+            }
+            outputImage.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (Build.VERSION.SDK_INT < 24) {
+            //7.0之前，
+            imageUri = Uri.fromFile(outputImage);
+        } else {
+            //7.0之后
+            imageUri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID + ".fileProvider", outputImage);
+        }
     }
 
 }

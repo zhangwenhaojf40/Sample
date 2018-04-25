@@ -37,7 +37,8 @@ public class ImgUtil {
       } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
         Uri contentUri = ContentUris.withAppendedId(
             Uri.parse("content://downloads/public_downloads"), Long.valueOf(docId));
-        imagePath = getImagePath(context, contentUri, null); 
+        imagePath = getImagePath(context, contentUri, null);
+
       } 
     } else if ("content".equalsIgnoreCase(uri.getScheme())) {
       //如果不是document类型的Uri,则使用普通方式处理 

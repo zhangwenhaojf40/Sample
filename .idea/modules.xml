@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://D:\github0305\phoneMvp\TestPhoneMvp.iml" filepath="D:\github0305\phoneMvp\TestPhoneMvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\github0305\phoneMvp\app\app.iml" filepath="D:\github0305\phoneMvp\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/phoneMvp.iml" filepath="$PROJECT_DIR$/.idea/phoneMvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/photo/photo.iml" filepath="$PROJECT_DIR$/photo/photo.iml" />
     </modules>
