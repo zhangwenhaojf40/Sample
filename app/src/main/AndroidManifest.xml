@@ -31,6 +31,8 @@
         <activity android:name=".view.design.CoordActivityFiveActivity" />
         <activity android:name=".view.design.TextInputActivity" />
         <activity android:name=".view.NewsActivity" />
+        <!--钟表-->
+        <activity android:name=".view.WatchActivity" />
     </application>
 
 </manifest>

@@ -66,7 +66,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
     }
 
 
-    @OnClick({R.id.btn_jump, R.id.btn_new_list,R.id.btn_image})
+    @OnClick({R.id.btn_jump, R.id.btn_watch,R.id.btn_new_list,R.id.btn_image})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_jump:
@@ -80,6 +80,10 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
                 case R.id.btn_image:
                 startActivity(new Intent(this,ImageActivity.class));
                 break;
+                case R.id.btn_watch:
+                startActivity(new Intent(this,WatchActivity.class));
+                break;
+
         }
     }
 }
