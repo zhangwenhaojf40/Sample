@@ -1,5 +1,6 @@
 package yy.hao.com.testphonemvp.base;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActiv
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setTranslucentStatus();
+//        setTranslucentStatus();
         mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
                 .appCompent(ComponentHolder.getAppCompent())
                 .activityModule(new ActivityModule())
@@ -118,4 +119,8 @@ public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActiv
         ARouter.getInstance().build(url)
                 .navigation();
     }
+    public void jumpActivity(Class<? extends AppCompatActivity> clz) {
+       startActivity(new Intent(this,clz));
+    }
+
 }
