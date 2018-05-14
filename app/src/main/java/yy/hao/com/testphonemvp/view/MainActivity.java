@@ -17,6 +17,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import hao.wen.zhang.myview.SelfViewActivity;
 import yy.hao.com.testphonemvp.R;
 import yy.hao.com.testphonemvp.base.BaseActivity;
 import yy.hao.com.testphonemvp.iview.IMainAcitvity;
@@ -43,6 +44,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
         demos.add("新闻列表");
         demos.add("图库");
         demos.add("自定义表盘");
+        demos.add("自定义View");
 
     }
     {
@@ -50,6 +52,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
         activities.add(NewsActivity.class);
         activities.add(ImageActivity.class);
         activities.add(WatchActivity.class);
+        activities.add(SelfViewActivity.class);
 
 
     }

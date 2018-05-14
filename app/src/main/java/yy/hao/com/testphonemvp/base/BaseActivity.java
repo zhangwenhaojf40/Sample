@@ -13,7 +13,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.trello.rxlifecycle2.components.RxActivity;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import javax.inject.Inject;
@@ -24,7 +23,7 @@ import yy.hao.com.testphonemvp.dagger2.compent.ApiCompent;
 import yy.hao.com.testphonemvp.dagger2.compent.DaggerApiCompent;
 import yy.hao.com.testphonemvp.dagger2.module.ActivityModule;
 import yy.hao.com.testphonemvp.dagger2.module.ApiModule;
-import yy.hao.com.testphonemvp.present.IPresent;
+
 
 /**
  * Created by Administrator
@@ -34,7 +33,7 @@ import yy.hao.com.testphonemvp.present.IPresent;
 public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActivity implements IBaseView {
     @Inject
     public T mPresent;
-    public  ApiCompent mApiCompent;
+    public ApiCompent mApiCompent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
