@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.bao.tao.photo.ImageActivity;
@@ -43,7 +44,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
         demos.add("新特性");
         demos.add("新闻列表");
         demos.add("图库");
-        demos.add("自定义表盘");
+
         demos.add("自定义View");
 
     }
@@ -51,7 +52,8 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
         activities.add(CoordinatorLayoutActivity.class);
         activities.add(NewsActivity.class);
         activities.add(ImageActivity.class);
-        activities.add(WatchActivity.class);
+
+
         activities.add(SelfViewActivity.class);
 
 
@@ -63,6 +65,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
 
     @Override
     protected void initData() {
+        Log.e("ee", "initData: "+"************" );
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
         MainAdapeter adapeter = new MainAdapeter(R.layout.item_main, demos);
         mRecycleView.setAdapter(adapeter);
@@ -98,26 +101,6 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
     }
 
 
-    /* @OnClick({R.id.btn_jump, R.id.btn_watch,R.id.btn_new_list,R.id.btn_image})
-     public void onViewClicked(View view) {
-         switch (view.getId()) {
-             case R.id.btn_jump:
- //                jumpActivity("/Activity/CoordinatorLayoutActivity");
-                 startActivity(new Intent(this,CoordinatorLayoutActivity.class));
-                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-                 break;
-             case R.id.btn_new_list:
-                 jumpActivity("/Activity/NewsActivity");
-                 break;
-                 case R.id.btn_image:
-                 startActivity(new Intent(this,ImageActivity.class));
-                 break;
-                 case R.id.btn_watch:
-                 startActivity(new Intent(this,WatchActivity.class));
-                 break;
-
-         }
-     }*/
     class MainAdapeter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public MainAdapeter(int layoutResId, @Nullable List<String> data) {

@@ -1,4 +1,4 @@
-package yy.hao.com.testphonemvp.selfview;
+package hao.wen.zhang.myview.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -12,8 +12,9 @@ import android.view.View;
 
 import java.util.Calendar;
 
-import yy.hao.com.testphonemvp.R;
-import yy.hao.com.testphonemvp.util.DpUtils;
+import hao.wen.zhang.myview.R;
+import hao.wen.zhang.myview.util.DpUtils;
+
 
 /**
  * 作者：ZWH
@@ -39,6 +40,7 @@ public class WatchView extends View {
     private int mWidth;
     //圆点高度
     private int mHeight;
+    private Context context;
 
     public WatchView(Context context) {
         super(context);
@@ -46,6 +48,7 @@ public class WatchView extends View {
 
     public WatchView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         TypedArray type = context.obtainStyledAttributes(attrs, R.styleable.WatchView);
         colorCirlce = type.getColor(R.styleable.WatchView_colorCircle, Color.WHITE);
         init();
@@ -69,10 +72,10 @@ public class WatchView extends View {
         * */
 
         if (widthMode == MeasureSpec.AT_MOST) {
-            widthSize = DpUtils.dip2px(500);
+            widthSize = DpUtils.dip2px(context,500);
         }
         if (heightMode == MeasureSpec.AT_MOST) {
-            heightSize = DpUtils.dip2px(500);
+            heightSize = DpUtils.dip2px(context,500);
         }
         setMeasuredDimension(widthSize, heightSize);
     }

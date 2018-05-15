@@ -23,6 +23,7 @@ import yy.hao.com.testphonemvp.dagger2.compent.ApiCompent;
 import yy.hao.com.testphonemvp.dagger2.compent.DaggerApiCompent;
 import yy.hao.com.testphonemvp.dagger2.module.ActivityModule;
 import yy.hao.com.testphonemvp.dagger2.module.ApiModule;
+import yy.hao.com.testphonemvp.present.IPresent;
 
 
 /**

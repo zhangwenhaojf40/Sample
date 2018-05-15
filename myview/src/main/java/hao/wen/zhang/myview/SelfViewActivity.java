@@ -13,16 +13,28 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
 
     private Button btnBase;
     private Button btnBall;
+    private Button btnWatch;
+    private Button btnSort;
+    private Button btnRader;
+    private Button btnTouchBall;
 
     @Override
     protected void initData() {
         btnBase = (Button) findViewById(R.id.btn_wave);
         btnBall = (Button) findViewById(R.id.btn_ball);
+        btnWatch = (Button) findViewById(R.id.btn_watch);
+        btnSort = (Button) findViewById(R.id.btn_sort);
+        btnRader = (Button) findViewById(R.id.btn_rader);
+        btnTouchBall = (Button) findViewById(R.id.btn_touch_ball);
         initListen();
     }
     private void initListen() {
         btnBase.setOnClickListener(this);
         btnBall.setOnClickListener(this);
+        btnWatch.setOnClickListener(this);
+        btnSort.setOnClickListener(this);
+        btnRader.setOnClickListener(this);
+        btnTouchBall.setOnClickListener(this);
     }
 
     @Override
@@ -32,19 +44,21 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-      /*  switch (v.getId()) {
-            case R.id.btn_wave:
-                jumpActivity(WaveActivity.class);
-                break;
-            case R.id.btn_ball:
-                jumpActivity(BallActivity.class);
-                break;
-        }*/
-        if (v.getId() == R.id.btn_ball) {
+        int id=v.getId();
+
+        if (id == R.id.btn_ball) {
             jumpActivity(BallActivity.class);
 
-        } else if (v.getId()==R.id.btn_wave) {
+        } else if (id==R.id.btn_wave) {
             jumpActivity(WaveActivity.class);
+        }else if (id==R.id.btn_watch) {
+            jumpActivity(WatchActivity.class);
+        }else if (id==R.id.btn_sort) {
+            jumpActivity(SortActivity.class);
+        }else if (id==R.id.btn_rader) {
+            jumpActivity(RaderActivity.class);
+        }else if (id==R.id.btn_touch_ball) {
+            jumpActivity(TouchBallActivity.class);
         }
     }
 }

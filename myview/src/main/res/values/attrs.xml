@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WatchView">
+        <attr name="radius" format="dimension"/>
+        <attr name="colorCircle" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="RaderView">
+        <attr name="radius_Rader" format="dimension"/>
+        <attr name="colorCircle_Rader" format="color"/>
+        <attr name="colorLine_Rader" format="color"/>
+        <attr name="count" format="integer" />
+    </declare-styleable>
+</resources>

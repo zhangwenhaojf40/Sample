@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="hao.wen.zhang.myview.MainActivity">
+    >
 
     <Button
         android:layout_width="match_parent"
@@ -16,6 +16,26 @@
         android:layout_width="match_parent"
         android:id="@+id/btn_ball"
         android:text="小球滚动"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_watch"
+        android:text="自定义表盘"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_sort"
+        android:text="字母排序"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_rader"
+        android:text="雷达"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_touch_ball"
+        android:text="黏性小球"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

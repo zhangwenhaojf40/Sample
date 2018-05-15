@@ -83,7 +83,8 @@ public class SplashActivity extends BaseActivity<SplashActivityPresent> implemen
                 .withString("aaa","bbb")
                 .navigation();*/
         startActivity(new Intent(this,MainActivity.class));
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+//        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
 
 
     }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@mipmap/beijing2x"
+    android:layout_height="match_parent">
+<hao.wen.zhang.myview.view.RaderView
+    android:layout_width="match_parent"
+    app:colorCircle_Rader="#55ff8877"
+    android:id="@+id/rader"
+
+    app:colorLine_Rader="#ff0000"
+    app:count="20"
+    android:layout_height="match_parent" />
+</LinearLayout>
