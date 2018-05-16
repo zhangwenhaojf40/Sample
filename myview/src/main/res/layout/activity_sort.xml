@@ -9,6 +9,14 @@
 
 </android.support.v7.widget.RecyclerView>
 <hao.wen.zhang.myview.view.SortView
-    android:layout_width="match_parent"
+    android:id="@+id/sort_view"
+    android:layout_width="30dp"
+    android:layout_gravity="end"
     android:layout_height="match_parent" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="滚动"
+        android:id="@+id/btn_sroll"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content" />
 </FrameLayout>

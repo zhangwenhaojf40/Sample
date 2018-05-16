@@ -15,6 +15,7 @@
         <activity android:name=".SortActivity" />
         <activity android:name=".RaderActivity" />
         <activity android:name=".TouchBallActivity" />
+        <activity android:name=".PregressActivity" />
     </application>
 
 </manifest>

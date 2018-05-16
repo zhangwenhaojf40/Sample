@@ -17,6 +17,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
     private Button btnSort;
     private Button btnRader;
     private Button btnTouchBall;
+    private Button btnProgress;
 
     @Override
     protected void initData() {
@@ -26,6 +27,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnSort = (Button) findViewById(R.id.btn_sort);
         btnRader = (Button) findViewById(R.id.btn_rader);
         btnTouchBall = (Button) findViewById(R.id.btn_touch_ball);
+        btnProgress = (Button) findViewById(R.id.btn_progress);
         initListen();
     }
     private void initListen() {
@@ -35,6 +37,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnSort.setOnClickListener(this);
         btnRader.setOnClickListener(this);
         btnTouchBall.setOnClickListener(this);
+        btnProgress.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +62,8 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
             jumpActivity(RaderActivity.class);
         }else if (id==R.id.btn_touch_ball) {
             jumpActivity(TouchBallActivity.class);
+        }else if (id==R.id.btn_progress) {
+            jumpActivity(PregressActivity.class);
         }
     }
 }

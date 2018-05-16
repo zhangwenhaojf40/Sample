@@ -3,12 +3,13 @@
     package="yy.hao.com.testphonemvp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:name=".app.MyApp"
-        android:icon="@mipmap/index"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/index"
+
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.SplashActivity">

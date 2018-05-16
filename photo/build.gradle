@@ -1,8 +1,5 @@
-if (rootProject.ext.android.isPhoto) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin:'com.android.library'
-}
+apply plugin:'com.android.library'
+
 
 
 android {
@@ -11,10 +8,10 @@ android {
 
 
     defaultConfig {
-        if (rootProject.ext.android.isPhoto) {
 
-            applicationId "com.bao.tao.photo"
-        }
+
+
+
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

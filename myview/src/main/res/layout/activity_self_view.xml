@@ -37,6 +37,11 @@
         android:id="@+id/btn_touch_ball"
         android:text="黏性小球"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_progress"
+        android:text="进度条"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
 
