@@ -8,6 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.bao.tao.base.base.BaseActivity;
+import com.bao.tao.base.iview.IMainAcitvity;
+import com.bao.tao.base.m.Student;
+import com.bao.tao.base.view.NewsActivity;
+import com.bao.tao.base.view.PhoneActivity;
+import com.bao.tao.base.view.design.CoordinatorLayoutActivity;
 import com.bao.tao.photo.ImageActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -17,24 +23,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
+
 import hao.wen.zhang.myview.SelfViewActivity;
+import hao.wen.zhang.sharelib.ShareActivity;
 import yy.hao.com.testphonemvp.R;
-import yy.hao.com.testphonemvp.base.BaseActivity;
-import yy.hao.com.testphonemvp.iview.IMainAcitvity;
-import yy.hao.com.testphonemvp.m.Student;
-import yy.hao.com.testphonemvp.present.MainActivityPresent;
-import yy.hao.com.testphonemvp.view.design.CoordinatorLayoutActivity;
 
 
-public class MainActivity extends BaseActivity<MainActivityPresent> implements IMainAcitvity {
-
+public class MainActivity extends BaseActivity implements IMainAcitvity {
 
 
     @Inject
     Student student;
 
-    @BindView(R.id.rv_main)
+
+
     RecyclerView mRecycleView;
     ArrayList<String> demos = new ArrayList<>();
     ArrayList<Class<? extends AppCompatActivity>>activities=new ArrayList<>();
@@ -46,6 +48,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
         demos.add("图库");
 
         demos.add("自定义View");
+        demos.add("分享");
 
     }
     {
@@ -55,12 +58,12 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
 
 
         activities.add(SelfViewActivity.class);
+        activities.add(ShareActivity.class);
 
 
     }
     @Override
     protected void inject() {
-        mApiCompent.inject(this);
     }
 
     @Override
@@ -98,7 +101,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
 
     @Override
     protected void initView() {
-
+        mRecycleView = findViewById(R.id.rv_main);
     }
 
     @Override

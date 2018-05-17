@@ -1,40 +1,30 @@
 package yy.hao.com.testphonemvp.view;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
+import com.bao.tao.base.base.BaseActivity;
+import com.bao.tao.base.iview.ISplashActivity;
 
 import java.util.concurrent.TimeUnit;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import yy.hao.com.testphonemvp.R;
-import yy.hao.com.testphonemvp.base.BaseActivity;
-import yy.hao.com.testphonemvp.iview.ISplashActivity;
-import yy.hao.com.testphonemvp.present.SplashActivityPresent;
 
 /**
  * Created by ZhangWenHao
  * on 2018/3/27 0027.
  */
 
-public class SplashActivity extends BaseActivity<SplashActivityPresent> implements ISplashActivity {
-    @BindView(R.id.iv_log_bg)
-    ImageView ivLogBg;
-    @BindView(R.id.iv_log_content)
+public class SplashActivity extends BaseActivity implements ISplashActivity {
     ImageView ivLogContent;
 
     @Override
     protected void inject() {
-        mApiCompent.inject(this);
     }
 
     @Override
@@ -62,6 +52,7 @@ public class SplashActivity extends BaseActivity<SplashActivityPresent> implemen
 
     @Override
     protected void initView() {
+        ivLogContent = findViewById(R.id.iv_log_content);
         initAnimal();
     }
 

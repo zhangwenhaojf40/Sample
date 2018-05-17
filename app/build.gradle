@@ -1,8 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
+
         applicationId "yy.hao.com.testphonemvp"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
@@ -20,6 +22,7 @@ android {
                 arguments = [ moduleName : project.getName() ]
             }
         }
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -43,36 +46,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation project(':photo')
-    implementation project(':myview')
+    if (!rootProject.ext.android.photo) {
+        implementation project(':photo')
+    }
+    if (!rootProject.ext.android.myview) {
+
+        implementation project(':myview')
+    }
     implementation project(':base')
-
-    compile 'com.alibaba:arouter-api:1.3.1'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
-
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    compile 'com.jakewharton:butterknife:8.8.1'
-    //缺少这行  空指针
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    // dagger 2 的配置
-    compile 'com.google.dagger:dagger:2.11'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    //retrofit
-    compile 'com.youth.banner:banner:1.4.9'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
-    //rxjava
-    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    compile 'io.reactivex.rxjava2:rxjava:2.1.7'
-    implementation 'com.google.code.gson:gson:2.2.4'
-    //ARouter  依赖
-
-
-
-    //管理rxjava生命周期
-    compile 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
-    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
-    compile 'com.trello.rxlifecycle2:rxlifecycle-navi:2.1.0'
+    implementation project(':sharelib')
 }

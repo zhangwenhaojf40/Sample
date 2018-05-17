@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/myview" />
             <option value="$PROJECT_DIR$/photo" />
+            <option value="$PROJECT_DIR$/sharelib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

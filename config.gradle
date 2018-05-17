@@ -7,6 +7,9 @@ ext{
             versionCode :7,
             versionName :"1.0",
             isPhoto         : false,
+            photo:false,
+            myview:false,
+
 
     ]
 }

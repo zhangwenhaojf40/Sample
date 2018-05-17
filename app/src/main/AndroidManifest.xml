@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".app.MyApp"
+        android:name="com.bao.tao.base.app.MyApp"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
 
@@ -19,23 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.PhoneActivity" />
+        <activity android:name="com.bao.tao.base.view.PhoneActivity" />
         <activity android:name=".view.MainActivity"
             android:theme="@style/MainTheme"
             />
-        <activity android:name=".view.design.CoordinatorLayoutActivity"
+        <activity android:name="com.bao.tao.base.view.design.CoordinatorLayoutActivity"
 
             />
-        <activity android:name=".view.design.CoordActivityOneActivity" />
-        <activity android:name=".view.design.CoordActivityThreeActivity" />
-        <activity android:name=".view.design.CoordActivityFourActivity" />
-        <activity android:name=".view.design.CoordActivityFiveActivity" />
-        <activity android:name=".view.design.TextInputActivity" />
-        <activity android:name=".view.NewsActivity" />
+        <activity android:name="com.bao.tao.base.view.design.CoordActivityOneActivity" />
+        <activity android:name="com.bao.tao.base.view.design.CoordActivityThreeActivity" />
+        <activity android:name="com.bao.tao.base.view.design.CoordActivityFourActivity" />
+        <activity android:name="com.bao.tao.base.view.design.CoordActivityFiveActivity" />
+        <activity android:name="com.bao.tao.base.view.design.TextInputActivity" />
+        <activity android:name="com.bao.tao.base.view.NewsActivity" />
         <!--钟表-->
-        <activity android:name=".view.WatchActivity"
-            android:theme="@style/MainTheme"
-            />
+
     </application>
 
 </manifest>

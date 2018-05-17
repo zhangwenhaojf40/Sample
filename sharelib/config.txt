@@ -1,0 +1,4 @@
+注意：1.初始化  MyApp中写  自己友盟appId
+      2.初始化中  可能找不到UMConfigure  这个类  需要添加依赖
+         compile 'com.umeng.sdk:common:latest.integration'   坑比啊
+       3.清单文件中qq  Id   替换成自己的
