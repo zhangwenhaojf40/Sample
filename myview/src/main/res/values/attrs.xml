@@ -10,4 +10,8 @@
         <attr name="colorLine_Rader" format="color"/>
         <attr name="count" format="integer" />
     </declare-styleable>
+    <declare-styleable name="LinearProgressView">
+        <attr name="progress_linear" format="integer"/>
+
+    </declare-styleable>
 </resources>

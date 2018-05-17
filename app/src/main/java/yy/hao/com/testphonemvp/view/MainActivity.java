@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
 
     @Override
     protected void initData() {
-        Log.e("ee", "initData: "+"************" );
+        test();
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
         MainAdapeter adapeter = new MainAdapeter(R.layout.item_main, demos);
         mRecycleView.setAdapter(adapeter);
@@ -75,6 +75,18 @@ public class MainActivity extends BaseActivity<MainActivityPresent> implements I
                 jumpActivity(activities.get(position));
             }
         });
+
+    }
+
+    private void test() {
+        String s1 = "abc";
+        String s2 = "ab"+"c";
+        String s3 = "ab";
+        String s4 = s3+"c";
+
+        Log.e("MainActivity", (s1=="abc")+"" );
+        Log.e("MainActivity", (s1==s2)+"" );
+        Log.e("MainActivity", (s1==s4)+"" );
 
     }
 
