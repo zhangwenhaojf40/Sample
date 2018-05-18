@@ -16,13 +16,14 @@ import android.view.MotionEvent;
  */
 
 public class TouchBallView extends BaseView {
-    int startX;
-    int startY;
+
     private float x;
     private float y;
     int radius=40;
     private Rect rect;
     boolean isContains;
+    private float donwX;
+    private float donwY;
 
     public TouchBallView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -34,16 +35,13 @@ public class TouchBallView extends BaseView {
     private void initSet() {
         paint.setColor(Color.RED);
         rect = new Rect();
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (x == 0 && y == 0) {
-            x = width / 2;
-            y = height / 2;
-        }
-        Log.e("bb", "onDraw: "+x+"==="+y );
+
         canvas.drawCircle(x,y,radius,paint);
     }
 
@@ -51,47 +49,52 @@ public class TouchBallView extends BaseView {
     public boolean onTouchEvent(MotionEvent event) {
         x = event.getX();
         y = event.getY();
-        Log.e("bb", "onTouchEvent: "+x+"==="+y );
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-
-                Log.e("aa", "onTouchEvent: "+"down" );
+                donwX = event.getX();
+                donwY = event.getY();
+                //判断是否点中圆点
+                isContains();
                 break;
                 case MotionEvent.ACTION_MOVE:
+                    if (isContains) {//如果点中圆点  则重新绘制 移动
 
-                    if (isContains()) {//在范围之内  随之移动
                         invalidate();
-
                     }
-                    Log.e("bb", "onTouchEvent: "+isContains() );
                     break;
                 case MotionEvent.ACTION_UP:
-                Log.e("aa", "onTouchEvent: "+"up" );
+                    if (isContains) {//如果点中圆点  则重新设置矩形范围
+                        setRect();
+                    }
                 break;
         }
         return true;
 
     }
-
-    public boolean isContains() {
-
-            rect.left = startX- radius;
-            rect.top = startY- radius;
-
-            rect.right =startX+ radius;
-            rect.bottom = startY + radius;
+    public void isContains() {
+      isContains= rect.contains((int)donwX, (int)donwY);
 
 
+    }
+    public void  setRect() {
+
+            rect.left = (int) (x- radius);
+            rect.top = (int) (y- radius);
+
+            rect.right = (int) (x+ radius);
+            rect.bottom = (int) (y + radius);
 
 
-        return  rect.contains((int) x, (int) y);
+
+
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        Log.e("bb", "onSizeChanged: "+w+"*****"+h );
-        startX = w / 2;
-        startY = h / 2;
+
+        x = w / 2;
+        y = h / 2;
+        setRect();
     }
 }

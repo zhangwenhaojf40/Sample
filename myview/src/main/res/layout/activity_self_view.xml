@@ -42,6 +42,21 @@
         android:id="@+id/btn_progress"
         android:text="进度条"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_test_one"
+        android:text="测试1"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_test_shader"
+        android:text="Shader练习"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_password"
+        android:text="自定义密码"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
 

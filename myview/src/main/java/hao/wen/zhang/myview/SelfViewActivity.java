@@ -18,6 +18,9 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
     private Button btnRader;
     private Button btnTouchBall;
     private Button btnProgress;
+    private Button btnTestOne;
+    private Button btnShader;
+    private Button btnPassWord;
 
     @Override
     protected void initData() {
@@ -28,6 +31,9 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnRader = (Button) findViewById(R.id.btn_rader);
         btnTouchBall = (Button) findViewById(R.id.btn_touch_ball);
         btnProgress = (Button) findViewById(R.id.btn_progress);
+        btnTestOne = (Button) findViewById(R.id.btn_test_one);
+        btnShader = (Button) findViewById(R.id.btn_test_shader);
+        btnPassWord = (Button) findViewById(R.id.btn_password);
         initListen();
     }
     private void initListen() {
@@ -38,6 +44,9 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnRader.setOnClickListener(this);
         btnTouchBall.setOnClickListener(this);
         btnProgress.setOnClickListener(this);
+        btnTestOne.setOnClickListener(this);
+        btnShader.setOnClickListener(this);
+        btnPassWord.setOnClickListener(this);
     }
 
     @Override
@@ -64,6 +73,12 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
             jumpActivity(TouchBallActivity.class);
         }else if (id==R.id.btn_progress) {
             jumpActivity(PregressActivity.class);
+        }else if (id==R.id.btn_test_one) {
+            jumpActivity(TestViewActivity.class);
+        }else if (id==R.id.btn_test_shader) {
+            jumpActivity(ShaderActivity.class);
+        }else if (id==R.id.btn_password) {
+            jumpActivity(PassWordActivity.class);
         }
     }
 }

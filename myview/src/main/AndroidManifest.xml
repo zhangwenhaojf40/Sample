@@ -21,6 +21,9 @@
         <activity android:name=".RaderActivity" />
         <activity android:name=".TouchBallActivity" />
         <activity android:name=".PregressActivity" />
+        <activity android:name=".TestViewActivity" />
+        <activity android:name=".ShaderActivity" />
+        <activity android:name=".PassWordActivity" />
     </application>
 
 </manifest>

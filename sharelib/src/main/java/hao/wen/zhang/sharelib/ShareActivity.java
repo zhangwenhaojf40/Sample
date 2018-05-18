@@ -14,6 +14,8 @@ import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
 
 /**
  * 作者：ZWH
@@ -49,7 +51,18 @@ public class ShareActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         if (requestCode == 123) {
-            new ShareAction(ShareActivity.this).withText("hello").setDisplayList(SHARE_MEDIA.SINA, SHARE_MEDIA.QQ, SHARE_MEDIA.WEIXIN)
+
+            UMImage thumb =  new UMImage(ShareActivity.this, "https://www.baidu.com");
+//        image.setThumb(thumb);
+
+            UMWeb web = new UMWeb("https://www.baidu.com");
+            web.setTitle("women");//标题
+            web.setThumb(thumb);  //缩略图
+            web.setDescription("这是一个分享");//描述
+
+            new ShareAction(ShareActivity.this)
+                    .withMedia(web)
+                    .setDisplayList(SHARE_MEDIA.QQ,SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN_CIRCLE, SHARE_MEDIA.WEIXIN)
                     .setCallback(new UMShareListener() {
                         @Override
                         public void onStart(SHARE_MEDIA share_media) {
@@ -58,19 +71,20 @@ public class ShareActivity extends AppCompatActivity {
 
                         @Override
                         public void onResult(SHARE_MEDIA share_media) {
-                            System.out.println(share_media.toString());
+
                         }
 
                         @Override
                         public void onError(SHARE_MEDIA share_media, Throwable throwable) {
-                            System.out.println(throwable.getMessage());
+
                         }
 
                         @Override
                         public void onCancel(SHARE_MEDIA share_media) {
 
                         }
-                    }).open();
+                    })
+                    .open();
         } else {
             Toast.makeText(this, "权限拒绝，不能使用", Toast.LENGTH_SHORT).show();
         }
