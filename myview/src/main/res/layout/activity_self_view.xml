@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -57,6 +63,28 @@
         android:id="@+id/btn_password"
         android:text="自定义密码"
         android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_text"
+        android:text="字符串逐句显示"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_sport"
+        android:text="仿运动步数"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/btn_luck"
+        android:text="幸运转盘"
+        android:layout_height="wrap_content" />  <Button
+        android:layout_width="match_parent"
+
+        android:id="@+id/btn_tag"
+        android:text="标签"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
 
+</ScrollView>

@@ -21,6 +21,10 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
     private Button btnTestOne;
     private Button btnShader;
     private Button btnPassWord;
+    private Button btnText;
+    private Button btnSport;
+    private Button btnLuck;
+    private Button btnTag;
 
     @Override
     protected void initData() {
@@ -34,6 +38,10 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnTestOne = (Button) findViewById(R.id.btn_test_one);
         btnShader = (Button) findViewById(R.id.btn_test_shader);
         btnPassWord = (Button) findViewById(R.id.btn_password);
+        btnText = (Button) findViewById(R.id.btn_text);
+        btnSport = (Button) findViewById(R.id.btn_sport);
+        btnLuck = (Button) findViewById(R.id.btn_luck);
+        btnTag = (Button) findViewById(R.id.btn_tag);
         initListen();
     }
     private void initListen() {
@@ -47,6 +55,10 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnTestOne.setOnClickListener(this);
         btnShader.setOnClickListener(this);
         btnPassWord.setOnClickListener(this);
+        btnText.setOnClickListener(this);
+        btnSport.setOnClickListener(this);
+        btnLuck.setOnClickListener(this);
+        btnTag.setOnClickListener(this);
     }
 
     @Override
@@ -79,6 +91,14 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
             jumpActivity(ShaderActivity.class);
         }else if (id==R.id.btn_password) {
             jumpActivity(PassWordActivity.class);
+        }else if (id==R.id.btn_text) {
+            jumpActivity(MyViewActivity.class);
+        }else if (id==R.id.btn_sport) {
+            jumpActivity(SportActivity.class);
+        }else if (id==R.id.btn_luck) {
+            jumpActivity(GoodLuckActivity.class);
+        }else if (id==R.id.btn_tag) {
+            jumpActivity(TagActivity.class);
         }
     }
 }

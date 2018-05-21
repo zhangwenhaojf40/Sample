@@ -70,7 +70,7 @@ public class PassWordView extends AppCompatEditText {
         height = MeasureSpec.getSize(heightMeasureSpec);
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        if (heightMode == MeasureSpec.AT_MOST) {//
+        if (heightMode == MeasureSpec.AT_MOST) { //
             height = DpUtils.dip2px(context, 50);
         }
         setMeasuredDimension(width,height);
