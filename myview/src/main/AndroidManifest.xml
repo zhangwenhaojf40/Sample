@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".BallActivity" />
         <activity android:name=".SelfViewActivity" >
+
            <!-- <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

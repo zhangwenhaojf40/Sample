@@ -3,6 +3,7 @@ package hao.wen.zhang.myview;
 import android.view.View;
 import android.widget.Button;
 
+
 /**
  * 作者：ZWH
  * 创建日期： 2018/5/14 0014 on 下午 6:10
@@ -25,7 +26,6 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
     private Button btnSport;
     private Button btnLuck;
     private Button btnTag;
-
     @Override
     protected void initData() {
         btnBase = (Button) findViewById(R.id.btn_wave);

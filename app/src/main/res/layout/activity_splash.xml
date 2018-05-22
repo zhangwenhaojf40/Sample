@@ -13,6 +13,7 @@
         android:id="@+id/iv_log_content"
         android:layout_width="120dp"
         android:src="@mipmap/ic_launcher_inner"
+        android:transitionName="transitionImg"
         android:layout_gravity="center"
         android:layout_height="wrap_content" />
     <TextView

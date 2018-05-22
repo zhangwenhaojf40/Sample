@@ -1,18 +1,23 @@
 package yy.hao.com.testphonemvp.view;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.bao.tao.base.base.BaseActivity;
 import com.bao.tao.base.iview.IMainAcitvity;
 import com.bao.tao.base.m.Student;
 import com.bao.tao.base.view.NewsActivity;
 import com.bao.tao.base.view.PhoneActivity;
+import com.bao.tao.base.view.ShareElementActivity;
 import com.bao.tao.base.view.design.CoordinatorLayoutActivity;
 import com.bao.tao.photo.ImageActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -32,14 +37,14 @@ import yy.hao.com.testphonemvp.R;
 public class MainActivity extends BaseActivity implements IMainAcitvity {
 
 
-    @Inject
-    Student student;
+
 
 
 
     RecyclerView mRecycleView;
     ArrayList<String> demos = new ArrayList<>();
     ArrayList<Class<? extends AppCompatActivity>>activities=new ArrayList<>();
+    private ImageView ivLog;
 
     {
 
@@ -49,6 +54,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
 
         demos.add("自定义View");
         demos.add("分享");
+
 
     }
     {
@@ -68,7 +74,6 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
 
     @Override
     protected void initData() {
-        test();
         mRecycleView.setLayoutManager(new LinearLayoutManager(this));
         MainAdapeter adapeter = new MainAdapeter(R.layout.item_main, demos);
         mRecycleView.setAdapter(adapeter);
@@ -81,26 +86,30 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
 
     }
 
-    private void test() {
-        String s1 = "abc";
-        String s2 = "ab"+"c";
-        String s3 = "ab";
-        String s4 = s3+"c";
-
-        Log.e("MainActivity", (s1=="abc")+"" );
-        Log.e("MainActivity", (s1==s2)+"" );
-        Log.e("MainActivity", (s1==s4)+"" );
-
-    }
 
 
     @Override
     protected void initListenten() {
+        ivLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShareElementActivity.class);
+                if (Build.VERSION.SDK_INT > 21) {
 
+                    ActivityOptionsCompat optionsCompat =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this, ivLog, "transitionImg");
+                    ActivityCompat.startActivity(MainActivity.this, intent, optionsCompat.toBundle());
+
+                } else {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override
     protected void initView() {
+        ivLog = findViewById(R.id.iv_log);
         mRecycleView = findViewById(R.id.rv_main);
     }
 

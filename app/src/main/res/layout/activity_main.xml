@@ -7,13 +7,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="yy.hao.com.testphonemvp.view.MainActivity">
-    <android.support.v7.widget.Toolbar
-        android:layout_width="match_parent"
-        android:background="@color/toolbar"
-        android:layout_height="56dp">
 
-    </android.support.v7.widget.Toolbar>
+    tools:context="yy.hao.com.testphonemvp.view.MainActivity">
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/iv_log"
+            android:layout_width="wrap_content"
+            android:transitionName="transitionImg"
+            android:src="@mipmap/logo"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 <android.support.v7.widget.RecyclerView
     android:id="@+id/rv_main"
     android:layout_width="match_parent"
