@@ -26,6 +26,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
     private Button btnSport;
     private Button btnLuck;
     private Button btnTag;
+    private Button btnPie;
     @Override
     protected void initData() {
         btnBase = (Button) findViewById(R.id.btn_wave);
@@ -42,6 +43,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnSport = (Button) findViewById(R.id.btn_sport);
         btnLuck = (Button) findViewById(R.id.btn_luck);
         btnTag = (Button) findViewById(R.id.btn_tag);
+        btnPie = (Button) findViewById(R.id.btn_pie);
         initListen();
     }
     private void initListen() {
@@ -59,6 +61,7 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
         btnSport.setOnClickListener(this);
         btnLuck.setOnClickListener(this);
         btnTag.setOnClickListener(this);
+        btnPie.setOnClickListener(this);
     }
 
     @Override
@@ -99,6 +102,8 @@ public class SelfViewActivity extends BaseActivity implements View.OnClickListen
             jumpActivity(GoodLuckActivity.class);
         }else if (id==R.id.btn_tag) {
             jumpActivity(TagActivity.class);
+        }else if (id==R.id.btn_pie) {
+            jumpActivity(PieActivity.class);
         }
     }
 }

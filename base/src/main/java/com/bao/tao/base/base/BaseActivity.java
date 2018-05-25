@@ -39,10 +39,13 @@ public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActiv
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 //        setTranslucentStatus();
-        mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
-                .appCompent(ComponentHolder.getAppCompent())
-                .activityModule(new ActivityModule())
-                .build();
+
+            mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
+                    .appCompent(ComponentHolder.getAppCompent())
+                    .activityModule(new ActivityModule())
+                    .build();
+
+
 
         inject();
         attachView();
@@ -118,6 +121,10 @@ public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActiv
 
     public void jumpActivity(Class<? extends AppCompatActivity> clz) {
        startActivity(new Intent(this,clz));
+    }
+  public void jumpActivityFinish(Class<? extends AppCompatActivity> clz) {
+       startActivity(new Intent(this,clz));
+       finish();
     }
 
 }

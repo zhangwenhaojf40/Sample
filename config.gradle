@@ -6,9 +6,10 @@ ext{
             targetSdkVersion :27,
             versionCode :7,
             versionName :"1.0",
-            isPhoto         : false,
+            isPhoto: false,
             photo:false,
             myview:false,
+            guid:false,
 
 
     ]

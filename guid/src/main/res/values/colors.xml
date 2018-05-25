@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cyan_500">#00BCD4</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="green_500">#4CAF50</color>
+
+    <color name="Primary">#2196F3</color>
+    <color name="colorPrimaryDark">#1E88E5</color>
+    <color name="colorAccent">#42A5F5</color>
+</resources>

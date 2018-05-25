@@ -22,7 +22,12 @@
         <activity android:name="com.bao.tao.base.view.PhoneActivity" />
         <activity android:name=".view.MainActivity"
             android:theme="@style/MainTheme"
-            />
+            >
+            <intent-filter>
+                <action android:name="MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name="com.bao.tao.base.view.design.CoordinatorLayoutActivity"
 
             />
@@ -33,6 +38,8 @@
         <activity android:name="com.bao.tao.base.view.design.TextInputActivity" />
         <activity android:name="com.bao.tao.base.view.NewsActivity" />
         <activity android:name="com.bao.tao.base.view.ShareElementActivity" />
+        <activity android:name="hao.wen.zhang.guid.GuidActivity" />
+
         <!--钟表-->
 
     </application>

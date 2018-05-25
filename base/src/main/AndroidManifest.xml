@@ -3,7 +3,7 @@
     package="com.bao.tao.base">
 
 
-    <application>
+    <application >
         <activity android:name=".view.ShareElementActivity" />
     </application>
 </manifest>

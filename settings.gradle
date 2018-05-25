@@ -1,1 +1,1 @@
-include ':app', ':photo', ':base', ':myview', ':sharelib'
+include ':app', ':photo', ':base', ':myview', ':sharelib', ':guid'

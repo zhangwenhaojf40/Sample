@@ -29,6 +29,7 @@
         <activity android:name=".SportActivity" />
         <activity android:name=".GoodLuckActivity" />
         <activity android:name=".TagActivity" />
+        <activity android:name=".PieActivity" />
     </application>
 
 </manifest>

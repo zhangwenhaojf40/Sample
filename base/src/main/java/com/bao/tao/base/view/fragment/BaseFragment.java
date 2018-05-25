@@ -79,10 +79,12 @@ public abstract  class BaseFragment<T extends BasePresent> extends RxFragment im
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
-                .appCompent(ComponentHolder.getAppCompent())
-                .activityModule(new ActivityModule())
-                .build();
+
+            mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
+                    .appCompent(ComponentHolder.getAppCompent())
+                    .activityModule(new ActivityModule())
+                    .build();
+
     }
 
 
