@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.bao.tao.base.app.MyApp;
 import com.bao.tao.base.dagger2.ComponentHolder;
 import com.bao.tao.base.dagger2.compent.ApiCompent;
 import com.bao.tao.base.dagger2.compent.DaggerApiCompent;
@@ -39,11 +40,13 @@ public abstract  class BaseActivity<T extends IPresent> extends RxAppCompatActiv
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 //        setTranslucentStatus();
-
+        if (MyApp.getApp() != null) {
             mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
                     .appCompent(ComponentHolder.getAppCompent())
                     .activityModule(new ActivityModule())
                     .build();
+        }
+
 
 
 

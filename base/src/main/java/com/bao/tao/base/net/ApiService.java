@@ -1,10 +1,12 @@
 package com.bao.tao.base.net;
 
 import com.bao.tao.base.m.ArtecleBean;
+import com.bao.tao.base.m.ChatBean;
 import com.bao.tao.base.m.LocationBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -18,5 +20,8 @@ public interface ApiService {
     Observable<LocationBean> getLocation(@Query("phone") String phoneNumber, @Query("key") String key);
     @GET("article/list/1/json")
     Observable<ArtecleBean> getArtecle();
+
+    @POST("openapi/api")
+    Observable<ChatBean> getResponse(@Query("key") String key, @Query("info") String info);
 
 }

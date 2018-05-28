@@ -8,13 +8,11 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.bao.tao.base.base.BaseActivity;
 import com.bao.tao.base.iview.IMainAcitvity;
-import com.bao.tao.base.m.Student;
 import com.bao.tao.base.view.NewsActivity;
 import com.bao.tao.base.view.PhoneActivity;
 import com.bao.tao.base.view.ShareElementActivity;
@@ -26,9 +24,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
-
+import hao.wen.zhang.chat.CharActivity;
 import hao.wen.zhang.myview.SelfViewActivity;
 import hao.wen.zhang.sharelib.ShareActivity;
 import yy.hao.com.testphonemvp.R;
@@ -54,6 +50,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
 
         demos.add("自定义View");
         demos.add("分享");
+        demos.add("聊天");
 
 
     }
@@ -65,6 +62,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
 
         activities.add(SelfViewActivity.class);
         activities.add(ShareActivity.class);
+        activities.add(CharActivity.class);
 
 
     }

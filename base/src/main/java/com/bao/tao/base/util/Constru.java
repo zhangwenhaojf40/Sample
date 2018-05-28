@@ -9,5 +9,10 @@ package com.bao.tao.base.util;
 public class Constru {
     public final static boolean GUID = true;
     public final static String  ISFIRST = "isFirst";
+    /*
+    * 图灵key
+    * */
+    public final static String  KEY = "663d9942e62a4a0f9fbca3686c076981";
+
 
 }

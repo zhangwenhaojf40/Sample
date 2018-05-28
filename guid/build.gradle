@@ -1,5 +1,4 @@
 if (rootProject.ext.android.guid) {
-
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'

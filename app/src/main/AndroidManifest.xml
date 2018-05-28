@@ -39,6 +39,7 @@
         <activity android:name="com.bao.tao.base.view.NewsActivity" />
         <activity android:name="com.bao.tao.base.view.ShareElementActivity" />
         <activity android:name="hao.wen.zhang.guid.GuidActivity" />
+        <activity android:name="hao.wen.zhang.chat.CharActivity" />
 
         <!--钟表-->
 

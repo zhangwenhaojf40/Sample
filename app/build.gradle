@@ -55,5 +55,9 @@ dependencies {
     }
     implementation project(':base')
     implementation project(':sharelib')
-    implementation project(':guid')
+    if (!rootProject.ext.android.guid) {
+
+        implementation project(':guid')
+    }
+    implementation project(':chat')
 }

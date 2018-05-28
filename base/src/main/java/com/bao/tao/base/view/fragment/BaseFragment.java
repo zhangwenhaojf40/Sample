@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bao.tao.base.app.MyApp;
 import com.bao.tao.base.base.IBaseView;
 import com.bao.tao.base.dagger2.ComponentHolder;
 import com.bao.tao.base.dagger2.compent.ApiCompent;
@@ -79,11 +80,13 @@ public abstract  class BaseFragment<T extends BasePresent> extends RxFragment im
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (MyApp.getApp() != null) {
 
             mApiCompent=  DaggerApiCompent.builder().apiModule(new ApiModule())
                     .appCompent(ComponentHolder.getAppCompent())
                     .activityModule(new ActivityModule())
                     .build();
+        }
 
     }
 
