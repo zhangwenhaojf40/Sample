@@ -35,6 +35,7 @@ public class CharActivity extends BaseActivity implements NavigationView.OnNavig
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction trans = fm.beginTransaction();
         trans.add(R.id.fl_content, ChatFragment.newInstans()).commit();
+
     }
 
     @Override

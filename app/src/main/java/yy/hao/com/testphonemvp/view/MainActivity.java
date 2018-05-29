@@ -21,6 +21,7 @@ import com.bao.tao.photo.ImageActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,10 +32,6 @@ import yy.hao.com.testphonemvp.R;
 
 
 public class MainActivity extends BaseActivity implements IMainAcitvity {
-
-
-
-
 
 
     RecyclerView mRecycleView;
@@ -68,6 +65,8 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
     }
     @Override
     protected void inject() {
+
+
     }
 
     @Override
@@ -83,6 +82,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
         });
 
     }
+
 
 
 
@@ -123,6 +123,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
     }
 
 
+    @SuppressWarnings("WeakerAccess")
     class MainAdapeter extends BaseQuickAdapter<String, BaseViewHolder> {
 
         public MainAdapeter(int layoutResId, @Nullable List<String> data) {

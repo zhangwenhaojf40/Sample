@@ -31,6 +31,7 @@ public class SplashActivity extends BaseActivity implements ISplashActivity {
 
     @Override
     protected void inject() {
+
     }
 
     @Override
