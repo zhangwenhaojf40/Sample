@@ -1,4 +1,4 @@
-package hao.wen.zhang.annotations;
+package hao.wen.zhang.annotations.bind;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

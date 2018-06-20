@@ -1,4 +1,4 @@
-package hao.wen.zhang.annotations;
+package hao.wen.zhang.annotations.bind;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,12 +7,13 @@ import java.lang.annotation.Target;
 
 /**
  * 作者：ZWH
- * 创建日期： 2018/5/29 0029   下午 3:56
+ * 创建日期： 2018/5/29 0029   下午 4:54
  * 描述说明：
  */
-@Target(ElementType.FIELD)
+
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Bind {
-    int value();
+public @interface BindClick {
+    int[] value();
 
 }

@@ -1,4 +1,5 @@
 apply plugin:'com.android.library'
+apply plugin: 'kotlin-android'
 
 
 
@@ -80,4 +81,8 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
     compile 'com.android.support:recyclerview-v7:27+'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

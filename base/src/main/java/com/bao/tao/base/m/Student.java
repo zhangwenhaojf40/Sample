@@ -1,5 +1,7 @@
 package com.bao.tao.base.m;
 
+import android.support.v7.app.AppCompatActivity;
+
 import javax.inject.Inject;
 
 /**
@@ -8,7 +10,7 @@ import javax.inject.Inject;
  */
 
 public class Student {
-    @Inject
+
     public Student() {
     }
 }

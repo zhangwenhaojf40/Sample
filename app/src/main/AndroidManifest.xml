@@ -3,7 +3,8 @@
     package="yy.hao.com.testphonemvp">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
     <application
         android:allowBackup="true"
         android:name="com.bao.tao.base.app.MyApp"
@@ -40,7 +41,9 @@
         <activity android:name="com.bao.tao.base.view.ShareElementActivity" />
         <activity android:name="hao.wen.zhang.guid.GuidActivity" />
         <activity android:name="hao.wen.zhang.chat.CharActivity" />
+        <activity android:name="com.bao.tao.base.view.XuanFu" />
 
+        <service android:name="com.bao.tao.base.view.XuanFuService" />
         <!--钟表-->
 
     </application>

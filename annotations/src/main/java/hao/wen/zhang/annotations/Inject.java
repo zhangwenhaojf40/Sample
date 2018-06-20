@@ -7,6 +7,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
+import hao.wen.zhang.annotations.bind.Bind;
+import hao.wen.zhang.annotations.bind.BindClick;
+import hao.wen.zhang.annotations.bind.BindRes;
+
 /**
  * 作者：ZWH
  * 创建日期： 2018/5/29 0029   下午 4:01

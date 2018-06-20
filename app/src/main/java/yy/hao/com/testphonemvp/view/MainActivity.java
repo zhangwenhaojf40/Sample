@@ -16,6 +16,7 @@ import com.bao.tao.base.iview.IMainAcitvity;
 import com.bao.tao.base.view.NewsActivity;
 import com.bao.tao.base.view.PhoneActivity;
 import com.bao.tao.base.view.ShareElementActivity;
+import com.bao.tao.base.view.XuanFu;
 import com.bao.tao.base.view.design.CoordinatorLayoutActivity;
 import com.bao.tao.photo.ImageActivity;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -48,6 +49,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
         demos.add("自定义View");
         demos.add("分享");
         demos.add("聊天");
+        demos.add("悬浮按钮");
 
 
     }
@@ -60,6 +62,7 @@ public class MainActivity extends BaseActivity implements IMainAcitvity {
         activities.add(SelfViewActivity.class);
         activities.add(ShareActivity.class);
         activities.add(CharActivity.class);
+        activities.add(XuanFu.class);
 
 
     }
